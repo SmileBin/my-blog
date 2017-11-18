@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const crypto = require('crypto');
+const { generateToken } = require('lib/token');
 
 function pwdEncrypt(password) {
     return crypto.createHmac('sha256', process.env.SECRET_KEY).update(password).digest('hex');
+}
+
+// ID 값의 일부를 키로 사용하는 암호화 ( 아직 적요된 부분 없음 )
+function pwdEncryptWithCustomKey(id, password) {
+    return crypto.createHmac('sha256', id).update(password).digest('hex');
 }
 
 const Account = new Schema({
@@ -27,5 +33,54 @@ const Account = new Schema({
     thoughtCount: { type: Number, default: 0 }, // 서비스에서 포스트를 작성 할 때마다 1씩 올라갑니다
     createdAt: { type: Date, default: Date.now }
 });
+
+Account.statics.findByUsername = function(username) {
+    // 객체에 내장되어있는 값을 사용 할 때는 객체명.키 이런식으로 쿼리하면 됩니다
+    return this.findOne({'profile.username': username}).exec();
+};
+
+Account.statics.findByEmail = function(email) {
+    return this.findOne({email}).exec();
+};
+
+Account.statics.findByEmailOrUsername = function({username, email}) {
+    return this.findOne({
+        // $or 연산자를 통해 둘중에 하나를 만족하는 데이터를 찾습니다
+        $or: [
+            { 'profile.username': username },
+            { email }
+        ]
+    }).exec();
+};
+
+Account.statics.localRegister = function({ username, email, password }) {
+    // 데이터를 생성 할 때는 new this() 를 사용합니다.
+    const account = new this({
+        profile: {
+            username
+            // thumbnail 값을 설정하지 않으면 기본값으로 설정됩니다.
+        },
+        email,
+        password: pwdEncrypt(password)
+    });
+
+    return account.save();
+};
+
+Account.methods.validatePassword = function(password) {
+    // 함수로 전달받은 password 의 해시값과, 데이터에 담겨있는 해시값과 비교를 합니다.
+    const hashed = pwdEncrypt(password);
+    return this.password === hashed;
+};
+
+Account.methods.generateToken = function() {
+    // JWT 에 담을 내용
+    const payload = {
+        _id: this._id,
+        profile: this.profile
+    };
+
+    return generateToken(payload, 'account');
+};
 
 module.exports = mongoose.model('Account', Account);
