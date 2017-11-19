@@ -3,6 +3,7 @@ import { BlogRoutingModule } from './blog.routing';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MainComponent } from './main/main.component';
+import { TopAreaComponent } from './top-area/top-area.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { MainComponent } from './main/main.component';
     exports: [],
     declarations: [
         MainComponent,
-        BlogFrameComponent
+        BlogFrameComponent,
+        TopAreaComponent
     ],
     providers: [],
 })
