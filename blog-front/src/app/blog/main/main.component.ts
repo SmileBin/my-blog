@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MainService } from './main.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
 
 @Component({
   selector: 'main',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  postList: any;
 
-  constructor() { }
+  constructor(private mainService : MainService, private sideNvFlg: SidenavFlagService) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+    this.mainService.getPostsList().subscribe(
+      result => this.postList = result['posts']
+    );
   }
 
+  sideNavToggle(){
+    console.log('toggling!');
+    this.sideNvFlg.toggleSidebarVisibilty();
+  }
 }

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ import { BlogModule } from './blog/blog.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BlogModule
+    BlogModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
