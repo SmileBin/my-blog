@@ -1,22 +1,25 @@
-import { isObjectBindingPattern } from 'tsutils';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class SidenavFlagService {
-    isSidebarVisible: boolean;
+    isSidebarVisible = false;
 
-    sidebarVisibilityChange: Subject<boolean> = new Subject<boolean>();
+    private sidebarVisibilityChange: Subject<boolean> = new Subject<boolean>();
 
-    constructor() {
-        this.sidebarVisibilityChange.subscribe((value) => {
-            this.isSidebarVisible = value
-        });
-    }
+    // constructor() {
+    //     this.sidebarVisibilityChange.subscribe((value) => {
+    //         this.isSidebarVisible = value;
+    //     });
+    // }
 
     toggleSidebarVisibilty() {
         console.log('transferring');
-        this.sidebarVisibilityChange.next(!this.isSidebarVisible);
+        this.sidebarVisibilityChange.next(true);
+    }
+
+    getSideStatus(): Observable<any> {
+        return this.sidebarVisibilityChange.asObservable();
     }
 }

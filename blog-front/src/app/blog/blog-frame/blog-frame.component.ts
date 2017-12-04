@@ -1,35 +1,37 @@
-import { Component, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { Component, OnChanges, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'blog-frame',
   templateUrl: './blog-frame.component.html',
   styleUrls: ['./blog-frame.component.scss']
 })
-export class BlogFrameComponent implements OnInit, OnChanges {
+export class BlogFrameComponent implements OnInit, OnChanges, OnDestroy {
 
   @ViewChild('sidenav') sideNv;
   isOpen = false;
   asideVisible: boolean;
+  subscription: Subscription;
 
-  constructor(private sideNvFlg: SidenavFlagService) { 
-    this.sideNvFlg.sidebarVisibilityChange.subscribe(value => {
-      console.log('Changed!');
+  constructor(private sideNvFlg: SidenavFlagService) {
+    this.subscription = this.sideNvFlg.getSideStatus().subscribe(value => {
+      console.log(value);
+      console.log(123);
+      this.sideNv.toggle();
     });
   }
+  ngOnInit(){
 
-  ngOnChanges(e){
+  }
+
+  ngOnChanges(e) {
     console.log('asdf');
 
   }
 
-  ngOnInit() {
-    // this.sideNvFlg.navClicked.subscribe(value => {
-    //   console.log(value);
-    //   console.log(123); 
-    //   this.sideNv.toggle();
-    // });
-    
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   // toggleSideBar(event: any){
