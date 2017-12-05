@@ -15,14 +15,13 @@ export class BlogFrameComponent implements OnInit, OnChanges, OnDestroy {
   subscription: Subscription;
 
   constructor(private sideNvFlg: SidenavFlagService) {
-    this.subscription = this.sideNvFlg.getSideStatus().subscribe(value => {
-      console.log(value);
-      console.log(123);
-      this.sideNv.toggle();
-    });
+    console.log('con');
   }
-  ngOnInit(){
 
+  ngOnInit() {
+    console.log('init');
+
+     this.sideNvFlg.toggleStatus.subscribe(value => console.log('frame', value));
   }
 
   ngOnChanges(e) {
@@ -31,7 +30,7 @@ export class BlogFrameComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
   // toggleSideBar(event: any){

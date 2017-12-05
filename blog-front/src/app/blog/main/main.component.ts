@@ -10,16 +10,18 @@ import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.
 export class MainComponent implements OnInit {
   postList: any;
 
-  constructor(private mainService : MainService, private sideNvFlg: SidenavFlagService) { }
+  constructor(private mainService: MainService, private sideNvFlg: SidenavFlagService) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.mainService.getPostsList().subscribe(
       result => this.postList = result['posts']
     );
+
+    this.sideNvFlg.toggleStatus.subscribe(value => console.log('main', value));
   }
 
   sideNavToggle(){
-    console.log('toggling!');
-    this.sideNvFlg.toggleSidebarVisibilty();
+    console.log('clicked!');
+    this.sideNvFlg.toggleSidebar();
   }
 }

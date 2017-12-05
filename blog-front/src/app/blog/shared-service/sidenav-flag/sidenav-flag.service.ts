@@ -1,25 +1,20 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class SidenavFlagService {
-    isSidebarVisible = false;
+    sidebarOpen = false;
 
-    private sidebarVisibilityChange: Subject<boolean> = new Subject<boolean>();
+    private sidebarStatusChange: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.sidebarOpen);
 
-    // constructor() {
-    //     this.sidebarVisibilityChange.subscribe((value) => {
-    //         this.isSidebarVisible = value;
-    //     });
-    // }
+    toggleStatus = this.sidebarStatusChange.asObservable();
 
-    toggleSidebarVisibilty() {
-        console.log('transferring');
-        this.sidebarVisibilityChange.next(true);
+    toggleSidebar() {
+        console.log('toggling in service');
+        this.sidebarOpen = !this.sidebarOpen;
+        this.sidebarStatusChange.next(this.sidebarOpen);
     }
 
-    getSideStatus(): Observable<any> {
-        return this.sidebarVisibilityChange.asObservable();
-    }
 }
