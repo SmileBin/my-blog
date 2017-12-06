@@ -18,8 +18,7 @@ import { SharedServiceModule } from './shared-service/shared-service.module';
         BlogRoutingModule,
         HttpClientModule,
         MainModule,
-        MaterialModule,
-        SharedServiceModule.forRoot()
+        MaterialModule
     ],
     exports: [],
     declarations: [

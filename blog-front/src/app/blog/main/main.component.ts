@@ -20,8 +20,7 @@ export class MainComponent implements OnInit {
     this.sideNvFlg.toggleStatus.subscribe(value => console.log('main', value));
   }
 
-  sideNavToggle(){
-    console.log('clicked!');
+  sideNavToggle() {
     this.sideNvFlg.toggleSidebar();
   }
 }

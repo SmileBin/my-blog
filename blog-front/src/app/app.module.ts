@@ -7,18 +7,20 @@ import { AppComponent } from './app.component';
 import { BlogFrameComponent } from './blog/blog-frame/blog-frame.component';
 import { AppRoutingModule } from './app.routing';
 import { BlogModule } from './blog/blog.module';
+import { SharedServiceModule } from './blog/shared-service/shared-service.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     BlogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedServiceModule.forRoot()
   ],
   declarations: [
     AppComponent,
     NotFoundComponent
-  ],  
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
