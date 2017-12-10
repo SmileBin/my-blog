@@ -4,6 +4,7 @@
             "postId" : "a01",
             "title" : "test01",
             "description" : "test01입니다",
+            "category" : "Angular 5",
             "created" : "20171101/15:00",
             "tags" : [
                 "aa","bb","cc"
@@ -13,6 +14,7 @@
             "postId" : "a02",
             "title" : "test02",
             "description" : "test02입니다",
+            "category" : "Angular 5",
             "created" : "20171102/15:00",
             "tags" : [
                 "bb","cc","dd"
@@ -22,6 +24,7 @@
             "postId" : "a03",
             "title" : "test03",
             "description" : "test03입니다",
+            "category" : "Angular 5",
             "created" : "20171103/15:00",
             "tags" : [
                 "dd","ee","ff"
@@ -31,6 +34,7 @@
             "postId" : "a04",
             "title" : "test04",
             "description" : "test04입니다",
+            "category" : "Angular 5",
             "created" : "20171104/15:00",
             "tags" : [
                 "ee","ff","gg"
@@ -40,6 +44,7 @@
             "postId" : "a05",
             "title" : "test05",
             "description" : "test05입니다",
+            "category" : "Angular 5",
             "created" : "20171105/15:00",
             "tags" : [
                 "ff","gg","hh"
@@ -49,6 +54,7 @@
             "postId" : "a06",
             "title" : "test06",
             "description" : "test06입니다",
+            "category" : "Angular 5",
             "created" : "20171106/15:00",
             "tags" : [
                 "gg","hh","ii"
@@ -58,6 +64,7 @@
             "postId" : "a07",
             "title" : "test07",
             "description" : "test07입니다",
+            "category" : "Angular 5",
             "created" : "20171107/15:00",
             "tags" : [
                 "hh","ii","jj"
@@ -67,6 +74,7 @@
             "postId" : "a08",
             "title" : "test08",
             "description" : "test08입니다",
+            "category" : "Angular 5",
             "created" : "20171108/15:00",
             "tags" : [
                 "ii","jj","kk"

@@ -1,5 +1,5 @@
 import { MainService } from './main.service';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
 
 @Component({
@@ -8,13 +8,16 @@ import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  postList: any;
+  @ViewChild('posts') postList;
+  @ViewChild('categories') categoryList;
+  
+  postData: any;
 
   constructor(private mainService: MainService, private sideNvFlg: SidenavFlagService) { }
 
   ngOnInit() {
     this.mainService.getPostsList().subscribe(
-      result => this.postList = result['posts']
+      result => this.postData = result['posts']
     );
 
     this.sideNvFlg.toggleStatus.subscribe(value => console.log('main', value));
@@ -22,5 +25,10 @@ export class MainComponent implements OnInit {
 
   sideNavToggle() {
     this.sideNvFlg.toggleSidebar();
+  }
+
+  goToTab(tab){
+    console.log('Active Tab', tab);
+
   }
 }
