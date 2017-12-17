@@ -1,0 +1,39 @@
+.menu-trigger {
+  top: 15px;
+  left: 15px;
+  z-index: 1080;
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  background: #333;
+  padding-top: 8px;
+  cursor: pointer;
+  span {
+    height: 5px;
+    width: 28px;
+    float: left;
+    display: block;
+    margin: 0 6px 5px;
+    background: #fff;
+  }
+}
+
+.hero-image {
+  height: 150px;
+  width: 100%;
+  background-image: url(/assets/img/sample/default-single-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: 768px) {
+    height: 300px
+  }
+  @media (min-width: 992px) {
+    height: 390px;
+  }
+  @media (min-width: 1200px) {
+    height: 460px;
+  }
+}
+

@@ -27,43 +27,45 @@
 <section class="col-lg-7 col-12 ml-auto main-content">
 
   <div class="sub-nav">
-    <a (click)="goToTab(posts)" class="select-posts active">Posts</a>
-    <a (click)="goToTab(categories)" class="select-categories">Categories</a>
+    <a (click)="goToTab('posts')" class="select-posts" [class.active]='selectFirst'>Posts</a>
+    <a (click)="goToTab('categories')" class="select-categories" [class.active]='selectSecond'>Categories</a>
   </div>
-  <mat-tab-group>
-    <mat-tab #posts class="sub-nav" label="Posts">
-      <div class="home-page-posts animated fadeIn ">
-        <article *ngFor="let post of postData" class="post">
-          <div class="post-preview col-10 no-gutter">
-            <h2>
-              <a routerLink="{{post.id}}">{{post.title}}</a>
-            </h2>
-            <p>{{post.description}}</p>
-    
-            <div class="meta">
-              <a routerLink="">Sung Bin</a> in
-              <a class="right-space" routerLink="">{{post.category}}</a>
-              <i class="fa fa-link"></i>
-              <ul class="tags">
-                <li *ngFor="let tag of post.tags"><a class="tag-link" routerLink="">#{{tag}}</a></li>
-              </ul>
+
+  <ngb-tabset #tabs type="pills">
+    <ngb-tab title="Posts" id='posts'>
+      <ng-template ngbTabContent>
+        <div class="home-page-posts">
+          <article *ngFor="let post of postData" class="post">
+            <div class="post-preview col-10 no-gutter">
+              <h2>
+                <a [routerLink]="['posts',post.postId]">{{post.title}}</a>
+              </h2>
+              <p>{{post.description}}</p>
+      
+              <div class="meta">
+                <a routerLink="">Sung Bin</a> in
+                <a class="right-space" routerLink="">{{post.category}}</a>
+                <i class="fa fa-link"></i>
+                <ul class="tags">
+                  <li *ngFor="let tag of post.tags"><a class="tag-link" routerLink="">#{{tag}}</a></li>
+                </ul>
+              </div>
             </div>
-          </div>
-    
-          <div class="col-2 no-gutter">
-            <!-- <img src="/assets/img/sample/profile-4.jpg" class="user-icon" alt="user-image"> -->
-    
-          </div>
-        </article>
-      </div>
-    </mat-tab>
-
-    <mat-tab #categories class="sub-nav" label="Categories">
-      <main-category></main-category>
-    </mat-tab>
-  </mat-tab-group>
-
-  <!-- Home page posts -->
+      
+            <div class="col-2 no-gutter">
+              <!-- <img src="/assets/img/sample/profile-4.jpg" class="user-icon" alt="user-image"> -->
+      
+            </div>
+          </article>
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Categories" id='categories'>
+      <ng-template ngbTabContent>
+        <main-category></main-category>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
 
 
   <footer class="split-footer">

@@ -8,6 +8,7 @@ import { BlogFrameComponent } from './blog/blog-frame/blog-frame.component';
 import { AppRoutingModule } from './app.routing';
 import { BlogModule } from './blog/blog.module';
 import { SharedServiceModule } from './blog/shared-service/shared-service.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SharedServiceModule } from './blog/shared-service/shared-service.module
     AppRoutingModule,
     BlogModule,
     BrowserAnimationsModule,
-    SharedServiceModule.forRoot()
+    SharedServiceModule.forRoot(),
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,

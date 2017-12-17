@@ -50,8 +50,24 @@ a.right-space{
   margin-right: 15px;
 }
 
-:host ::ng-deep .mat-tab-label {
+:host ::ng-deep ul.nav.nav-pills.justify-content-start {
   display: none;
+}
+:host ::ng-deep .tab-content > .active{
+  animation: tabAnimate 0.5s ease;
+}
+@keyframes tabAnimate {
+  from{
+    transform: translate3d(0,30px,0);
+    opacity: 0;
+  }
+  to{
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+a {
+  cursor: pointer;
 }
 // mat-tab-group.sub-nav {
 //   border-bottom: solid 1px #f5f5f5;

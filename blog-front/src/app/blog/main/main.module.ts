@@ -10,6 +10,7 @@ import { MainService } from './main.service';
 import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
 import { SharedServiceModule } from '../shared-service/shared-service.module';
 import { CategoryComponent } from './category/category.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import { CategoryComponent } from './category/category.component';
         RouterModule,
         ReactiveFormsModule,
         FormsModule,
-        SharedServiceModule
+        SharedServiceModule,
+        NgbModule
     ],
     exports: [],
     declarations: [

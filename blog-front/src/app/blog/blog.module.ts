@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { TopAreaComponent } from './top-area/top-area.component';
 import { SidenavFlagService } from './shared-service/sidenav-flag/sidenav-flag.service';
 import { SharedServiceModule } from './shared-service/shared-service.module';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { SharedServiceModule } from './shared-service/shared-service.module';
     exports: [],
     declarations: [
         BlogFrameComponent,
-        TopAreaComponent
+        TopAreaComponent,
+        PostDetailComponent
     ],
     providers: [
     ],
