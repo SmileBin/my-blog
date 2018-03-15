@@ -18,6 +18,6 @@ const BookSchema = new Schema({
         default: Date.now // 기본값은 현재 날짜로 지정합니다.
     }
 });
-
+ 
 // 스키마를 모델로 변환하여, 내보내기 합니다.
 module.exports = mongoose.model('Book', BookSchema);

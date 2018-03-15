@@ -1,3 +1,4 @@
+import { WhoamiComponent } from './whoami/whoami.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
@@ -5,6 +6,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'whoami', component: WhoamiComponent },
   { path: 'posts/:postId', component: PostDetailComponent }
 ];
 

@@ -1,0 +1,372 @@
+.menu-trigger {
+  top: 15px;
+  left: 15px;
+  z-index: 1080;
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  background: #333;
+  padding-top: 8px;
+  cursor: pointer;
+  span {
+    height: 5px;
+    width: 28px;
+    float: left;
+    display: block;
+    margin: 0 6px 5px;
+    background: #fff;
+  }
+}
+
+.hero-image {
+  height: 150px;
+  width: 100%;
+  background-image: url(/assets/img/sample/default-single-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (min-width: 768px) {
+    height: 300px
+  }
+  @media (min-width: 992px) {
+    height: 390px;
+  }
+  @media (min-width: 1200px) {
+    height: 460px;
+  }
+}
+
+.sidebar,
+.post-favorite,
+.favorites {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sidebar {
+  padding: 15px;
+  width: 100%;
+  height: 350px;
+  background-image: url('/assets/img/sample/default-sidebar.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 450ms;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+
+/* line 55, ../sass/_type.sass */
+
+h1 {
+  font-size: 38px;
+  font-size: 3.8rem;
+}
+
+
+/* line 58, ../sass/_type.sass */
+
+h2 {
+  font-size: 32px;
+  font-size: 3.2rem;
+}
+
+h2.favorites {
+  padding: 10px 0;
+  color: #b3b3b7;
+  text-transform: uppercase;
+  letter-spacing: 2pt;
+  border-bottom: solid 1px #dedede;
+  border-top: solid 1px #dedede;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+.sidebar .site-info h1 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: -2pt;
+  margin-bottom: 0;
+}
+
+.btn-default {
+  padding: 10px 15px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0 0;
+  border-radius: 4px;
+}
+
+.sidebar .site-info {
+  padding: 90px 15px 0 15px;
+  color: #fafafa;
+}
+
+
+/* line 45, ../sass/partials/_sidebar.sass */
+
+.sidebar .site-info p {
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  line-height: 24px;
+  line-height: 2.4rem;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+
+/* line 51, ../sass/partials/_sidebar.sass */
+
+.sidebar .site-info i {
+  font-style: normal;
+  margin-right: 10px;
+}
+
+.sidebar .site-info .primary-info {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+
+/* line 58, ../sass/partials/_sidebar.sass */
+
+.sidebar .site-info .primary-info a {
+  color: #E0E0E0;
+}
+
+
+/* line 60, ../sass/partials/_sidebar.sass */
+
+.sidebar .site-info .primary-info a:hover,
+.sidebar .site-info .primary-info a:active {
+  color: #fafafa;
+}
+
+
+/* line 66, ../sass/partials/_sidebar.sass */
+
+.sidebar .site-info .secondary-info p {
+  margin: 20px 0 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.author-bio img {
+  border-radius: 50%;
+  width: 150px;
+  float: left;
+}
+
+.author-bio:before,
+.author-bio:after {
+  content: " ";
+  display: table;
+}
+
+
+/* line 35, ../sass/_mixins.sass */
+
+.author-bio:after {
+  clear: both;
+}
+
+
+/* line 13, ../sass/partials/_author.sass */
+
+.author-bio .author-bio__info {
+  float: left;
+}
+
+
+/* line 16, ../sass/partials/_author.sass */
+
+.author-bio .author-bio__info h1 {
+  margin: 30px 0 20px;
+}
+
+@media (min-width: 992px) {
+  /* line 3, ../sass/partials/_author.sass */
+  .author-bio img {
+    float: right;
+    width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 1, ../sass/partials/_sidebar.sass */
+  .sidebar {
+    width: 400px;
+    height: 100%;
+    position: fixed;
+    background-color: #f5f5f5;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 23, ../sass/partials/_sidebar.sass */
+  .sidebar .site-info {
+    padding: 180px 100px 0 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 23, ../sass/partials/_sidebar.sass */
+  .sidebar .site-info {
+    padding: 0 20px;
+    position: absolute;
+    bottom: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* line 23, ../sass/partials/_sidebar.sass */
+  .sidebar .site-info {
+    padding: 0 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  p {
+    font-size: 21px;
+    font-size: 2.1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  p {
+    font-size: 21px;
+    font-size: 2.1rem;
+  }
+}
+
+.main-content {
+  padding: 30px;
+}
+
+@media (min-width: 768px) {
+  /* line 1, ../sass/partials/_main-content.sass */
+  .main-content {
+    padding: 60px 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 1, ../sass/partials/_main-content.sass */
+  .main-content {
+    padding: 50px;
+  }
+}
+
+.post .post-preview h2 a {
+  text-decoration: none;
+  color: #333337;
+  border: none;
+}
+
+
+/* line 51, ../sass/partials/_main-content.sass */
+
+.post .post-preview h2 a:hover {
+  color: #b6b6b6;
+}
+
+
+/* line 53, ../sass/partials/_main-content.sass */
+
+.post .post-preview p {
+  font-family: "Droid Serif", serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+@media (min-width: 992px) {
+  /* line 53, ../sass/partials/_main-content.sass */
+  .post .post-preview p {
+    font-size: 18px;
+    font-size: 1.8rem;
+  }
+}
+
+
+/* line 61, ../sass/partials/_main-content.sass */
+
+.post.author-page .post-preview p {
+  margin: 0;
+}
+
+.view-all-by-author {
+  text-align: right;
+  margin: 20px 0;
+}
+
+
+/* line 25, ../sass/partials/_author.sass */
+
+.view-all-by-author a {
+  font-size: 13px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+
+
+/* line 31, ../sass/partials/_author.sass */
+
+.view-all-by-author i {
+  margin-left: 5px;
+  font-size: 9px;
+  font-size: 0.9rem;
+  transform: translateY(-1px);
+}
+
+.split-footer {
+  padding: 10px 0;
+  font-size: 11px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+
+/* line 93, ../sass/partials/_main-content.sass */
+
+.split-footer a {
+  color: #999;
+  border-bottom: none;
+}
+
+
+/* line 97, ../sass/partials/_main-content.sass */
+
+.split-footer a:hover,
+.split-footer a:active {
+  color: #333;
+  border-bottom: none;
+}
+
+.post {
+    display: flex;
+    padding: 30px 0;
+    border-bottom: solid 1px #f5f5f5;
+    *zoom: 1;
+  }

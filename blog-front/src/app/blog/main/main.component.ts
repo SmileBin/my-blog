@@ -1,7 +1,9 @@
+import { WebsocketService } from '../../common/websocket/websocket.service';
 import { MainService } from './main.service';
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
 import { NgbTabset } from '@ng-bootstrap/ng-bootstrap/tabset/tabset';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -16,7 +18,13 @@ export class MainComponent implements OnInit {
 
   postData: any;
 
-  constructor(private mainService: MainService, private sideNvFlg: SidenavFlagService) { }
+  wsData: any;
+
+  constructor(
+    private mainService: MainService,
+    private sideNvFlg: SidenavFlagService,
+    private wsService: WebsocketService
+  ) { }
 
   ngOnInit() {
     this.mainService.getPostsList().subscribe(
@@ -24,6 +32,18 @@ export class MainComponent implements OnInit {
     );
 
     this.sideNvFlg.toggleStatus.subscribe(value => console.log('main', value));
+
+    // this.wsService.connect('ws://localhost:4000/').subscribe(result => console.log(result));
+    // this.wsData = this.wsService
+    // .connect('ws://localhost:4080/')
+    // .map((response: MessageEvent)  => {
+    //   let data = JSON.parse(response.data);
+    //   return {
+    //     author: data.author,
+    //     message: data.message
+    //   };
+    // });
+    // this.wsData
   }
 
   sideNavToggle() {
@@ -32,14 +52,12 @@ export class MainComponent implements OnInit {
 
   goToTab(tab) {
     this.tabGroup.select(tab);
-    if(tab === 'posts'){
+    if (tab === 'posts') {
       this.selectFirst = true;
       this.selectSecond = false;
-    }else{
+    } else {
       this.selectFirst = false;
       this.selectSecond = true;
     }
-    
-
   }
 }

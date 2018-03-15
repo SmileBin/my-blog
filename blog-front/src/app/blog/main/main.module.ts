@@ -11,6 +11,7 @@ import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.
 import { SharedServiceModule } from '../shared-service/shared-service.module';
 import { CategoryComponent } from './category/category.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WebsocketService } from '../../common/websocket/websocket.service';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         CategoryComponent
     ],
     providers: [
-        MainService
+        MainService,
+        WebsocketService
     ]
 })
 export class MainModule { }

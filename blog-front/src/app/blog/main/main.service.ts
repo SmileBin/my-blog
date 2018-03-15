@@ -5,9 +5,8 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class MainService {
     constructor(private http: HttpClient) { }
-    
-    
-    getPostsList(){
+
+    getPostsList() {
         return this.http.get('/assets/data/postsSample.json');
     }
 }

@@ -12,6 +12,7 @@ import { TopAreaComponent } from './top-area/top-area.component';
 import { SidenavFlagService } from './shared-service/sidenav-flag/sidenav-flag.service';
 import { SharedServiceModule } from './shared-service/shared-service.module';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { WhoamiComponent } from './whoami/whoami.component';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     declarations: [
         BlogFrameComponent,
         TopAreaComponent,
-        PostDetailComponent
+        PostDetailComponent,
+        WhoamiComponent
     ],
     providers: [
     ],
