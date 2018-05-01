@@ -20,26 +20,27 @@ import { PostDetailService } from './post-detail/post-detail.service';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        BlogRoutingModule,
-        HttpClientModule,
-        MainModule,
-        MaterialModule,
-        FooterModule,
-        MarkdownModule.forChild(),
-    ],
-    exports: [],
-    declarations: [
-        BlogFrameComponent,
-        TopAreaComponent,
-        PostDetailComponent,
-        WhoamiComponent
-    ],
-    providers: [
-      ScriptLoaderService,
-      PostDetailService
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedServiceModule.forRoot(),
+    BlogRoutingModule,
+    HttpClientModule,
+    MainModule,
+    MaterialModule,
+    FooterModule,
+    MarkdownModule.forChild(),
+  ],
+  exports: [],
+  declarations: [
+    BlogFrameComponent,
+    TopAreaComponent,
+    PostDetailComponent,
+    WhoamiComponent
+  ],
+  providers: [
+    ScriptLoaderService,
+    PostDetailService
+  ],
 })
 export class BlogModule { }

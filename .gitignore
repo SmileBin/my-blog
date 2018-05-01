@@ -1,2 +1,5 @@
 #Environment
 my-blog-server/.env
+
+# blog-front
+blog-front/package-lock.json

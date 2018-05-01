@@ -19,7 +19,6 @@ export class BlogFrameComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit() {
-
     this.sideNvFlg.toggleStatus.subscribe(value => {
       if (value) {
         this.sideNv.open();

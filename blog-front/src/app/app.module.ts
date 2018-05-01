@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BlogFrameComponent } from './blog/blog-frame/blog-frame.component';
 import { AppRoutingModule } from './app.routing';
-import { BlogModule } from './blog/blog.module';
 import { SharedServiceModule } from './blog/shared-service/shared-service.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MarkdownModule } from 'ngx-markdown';
@@ -16,9 +15,7 @@ import { MarkdownModule } from 'ngx-markdown';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BlogModule,
     BrowserAnimationsModule,
-    SharedServiceModule.forRoot(),
     NgbModule.forRoot(),
     MarkdownModule.forRoot()
   ],

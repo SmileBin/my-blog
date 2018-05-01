@@ -12,7 +12,7 @@ export class SidenavFlagService {
     toggleStatus = this.sidebarStatusChange.asObservable();
 
     toggleSidebar() {
-        // console.log('toggling in service');
+        console.log('toggling in service');
         this.sidebarOpen = !this.sidebarOpen;
         this.sidebarStatusChange.next(this.sidebarOpen);
     }

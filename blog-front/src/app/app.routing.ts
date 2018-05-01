@@ -6,23 +6,24 @@ import { BlogFrameComponent } from './blog/blog-frame/blog-frame.component';
 const routes: Routes = [
   { path: '', redirectTo: 'blog', pathMatch: 'full' },
   {
-    path: 'blog', component: BlogFrameComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: './blog/blog.module#BlogModule'
-      }
-    ]
+    path: 'blog', loadChildren: './blog/blog.module#BlogModule'
   },
+  //   children: [
+  //     {
+  //       path: '',
+  //       loadChildren: './blog/blog.module#BlogModule'
+  //     }
+  //   ]
+  // },
   {
     path: '**',
-    component : NotFoundComponent
+    component: NotFoundComponent
   }
 ];
 
 @NgModule({
-  imports :[ RouterModule.forRoot(routes)],
-  exports:[ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }

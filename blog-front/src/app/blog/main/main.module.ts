@@ -15,24 +15,24 @@ import { WebsocketService } from '../../common/websocket/websocket.service';
 import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        MaterialModule,
-        RouterModule,
-        ReactiveFormsModule,
-        FormsModule,
-        SharedServiceModule,
-        NgbModule,
-        FooterModule
-    ],
-    exports: [],
-    declarations: [
-        MainComponent,
-        CategoryComponent
-    ],
-    providers: [
-        MainService,
-        WebsocketService
-    ]
+  imports: [
+    CommonModule,
+    MaterialModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    // SharedServiceModule,
+    NgbModule,
+    FooterModule
+  ],
+  exports: [],
+  declarations: [
+    MainComponent,
+    CategoryComponent
+  ],
+  providers: [
+    MainService,
+    WebsocketService
+  ]
 })
 export class MainModule { }
