@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "postId": "p01",
+      "title": "네이버 지도 연동 테스트",
+      "description": "네이버 지도 테스트입니다",
+      "category": "Angular 5",
+      "created": "20171101/15:00",
+      "tags": [
+        "naver",
+        "maps"
+      ]
+    },
+    {
+      "postId": "p02",
+      "title": "구글 지도 연동 테스트",
+      "description": "구글 지도 테스트입니다",
+      "category": "Angular 5",
+      "created": "20171102/15:00",
+      "tags": [
+        "google",
+        "map",
+        "test"
+      ]
+    },
+    {
+      "postId": "p03",
+      "title": "테스트 포스팅",
+      "description": "포스트 테스트 입니다",
+      "category": "Angular 5",
+      "created": "20171103/15:00",
+      "tags": [
+        "aa",
+        "bb",
+        "cc"
+      ]
+    }
+  ]
+}

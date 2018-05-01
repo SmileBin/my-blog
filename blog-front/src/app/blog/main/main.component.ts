@@ -27,23 +27,8 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.mainService.getPostsList().subscribe(
-      result => this.postData = result['posts']
-    );
-
-    this.sideNvFlg.toggleStatus.subscribe(value => console.log('main', value));
-
-    // this.wsService.connect('ws://localhost:4000/').subscribe(result => console.log(result));
-    // this.wsData = this.wsService
-    // .connect('ws://localhost:4080/')
-    // .map((response: MessageEvent)  => {
-    //   let data = JSON.parse(response.data);
-    //   return {
-    //     author: data.author,
-    //     message: data.message
-    //   };
-    // });
-    // this.wsData
+    this.mainService.getPostsList().subscribe(result => this.postData = result['posts']);
+    this.sideNvFlg.toggleStatus.subscribe(value => {/*console.log('main', value)*/});
   }
 
   sideNavToggle() {

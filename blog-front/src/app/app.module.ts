@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app.routing';
 import { BlogModule } from './blog/blog.module';
 import { SharedServiceModule } from './blog/shared-service/shared-service.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MarkdownModule } from 'ngx-markdown';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BlogModule,
     BrowserAnimationsModule,
     SharedServiceModule.forRoot(),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    MarkdownModule.forRoot()
   ],
   declarations: [
     AppComponent,

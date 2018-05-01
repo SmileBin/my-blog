@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { SidenavFlagService } from '../shared-service/sidenav-flag/sidenav-flag.service';
 import { Subscription } from 'rxjs/Subscription';
+import { environment } from '../../../environments/environment.prod';
 
 @Component({
   selector: 'blog-frame',
@@ -35,6 +36,10 @@ export class BlogFrameComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy() {
     // this.subscription.unsubscribe();
+  }
+
+  goToGithub() {
+    window.open(environment.currentBlogAddr);
   }
 
 }

@@ -12,6 +12,7 @@ import { SharedServiceModule } from '../shared-service/shared-service.module';
 import { CategoryComponent } from './category/category.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WebsocketService } from '../../common/websocket/websocket.service';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { WebsocketService } from '../../common/websocket/websocket.service';
         ReactiveFormsModule,
         FormsModule,
         SharedServiceModule,
-        NgbModule
+        NgbModule,
+        FooterModule
     ],
     exports: [],
     declarations: [

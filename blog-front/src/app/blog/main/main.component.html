@@ -8,29 +8,26 @@
 
   <div class="site-info">
     <div class="primary-info">
-      <h1>Writer</h1>
+      <h1>Developer</h1>
       <p>A minimal blogging theme to put your content on show.
-        <a href="post.html">Look at the features.</a>
       </p>
 
-      <p>Content is king</p>
+      <p>is under construction ...</p>
     </div>
     <div class="secondary-info">
-      <p>
+      <!-- <p>
         <a class="btn btn-primary" href="#">
           <i class="fa fa-user-plus"></i>Join Our Newsletter</a>
-      </p>
+      </p> -->
     </div>
   </div>
 </section>
 
 <section class="col-lg-7 col-12 ml-auto main-content">
-
   <div class="sub-nav">
     <a (click)="goToTab('posts')" class="select-posts" [class.active]='selectFirst'>Posts</a>
     <a (click)="goToTab('categories')" class="select-categories" [class.active]='selectSecond'>Categories</a>
   </div>
-
   <ngb-tabset #tabs type="pills">
     <ngb-tab title="Posts" id='posts'>
       <ng-template ngbTabContent>
@@ -51,10 +48,8 @@
                 </ul>
               </div>
             </div>
-      
             <div class="col-2 no-gutter">
               <!-- <img src="/assets/img/sample/profile-4.jpg" class="user-icon" alt="user-image"> -->
-      
             </div>
           </article>
         </div>
@@ -67,11 +62,6 @@
     </ngb-tab>
   </ngb-tabset>
 
-
-  <footer class="split-footer">
-    <a href="post.html">About</a>
-    <i class="link-spacer"></i>
-    <a href="post.html">Writer 2017</a>
-  </footer>
+  <blog-footer></blog-footer>
 
 </section>

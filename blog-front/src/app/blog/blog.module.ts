@@ -13,14 +13,22 @@ import { SidenavFlagService } from './shared-service/sidenav-flag/sidenav-flag.s
 import { SharedServiceModule } from './shared-service/shared-service.module';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { WhoamiComponent } from './whoami/whoami.component';
+import { ScriptLoaderService } from '../common/script-loader/script-loader.service';
+import { FooterModule } from './footer/footer.module';
+import { MarkdownModule } from 'ngx-markdown';
+import { PostDetailService } from './post-detail/post-detail.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
         CommonModule,
+        FormsModule,
         BlogRoutingModule,
         HttpClientModule,
         MainModule,
-        MaterialModule
+        MaterialModule,
+        FooterModule,
+        MarkdownModule.forChild(),
     ],
     exports: [],
     declarations: [
@@ -30,6 +38,8 @@ import { WhoamiComponent } from './whoami/whoami.component';
         WhoamiComponent
     ],
     providers: [
+      ScriptLoaderService,
+      PostDetailService
     ],
 })
 export class BlogModule { }

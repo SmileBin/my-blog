@@ -4,6 +4,7 @@ import * as Rx from 'rxjs/Rx';
 @Injectable()
 export class WebsocketService {
 
+  // working on this... (not working yet)
 
     private subject: Rx.Subject<MessageEvent>;
 

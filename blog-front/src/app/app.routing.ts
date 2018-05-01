@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'blog', component: BlogFrameComponent,
     children: [
       {
-        path:'',
+        path: '',
         loadChildren: './blog/blog.module#BlogModule'
       }
     ]
@@ -25,4 +25,4 @@ const routes: Routes = [
   exports:[ RouterModule ]
 })
 
-export class AppRoutingModule{} 
+export class AppRoutingModule {}

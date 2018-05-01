@@ -1,31 +1,29 @@
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav mode="side" class="example-sidenav"
-                 [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0">
-        <div id="panel-menu">
-            <ul>
-                <li><i class="fa fa-home"></i><a routerLink="/blog">Home</a></li>
-                <li><i class="fa fa-user"></i><a routerLink="/blog/whoami">Cho, Sung Bin</a></li>
-                <!-- <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
-                <li><i class="fa fa-star"></i><a href="favorites.html">Favorites</a></li>
-                <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li> -->
-            </ul>
-            <hr>
-            <ul>
-                <!-- <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
-                <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
-
-                <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
-                <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li> -->
-                <li><i class="fa fa-image"></i><a routerLink="/blog">Test01</a></li>
-            </ul>
-        </div>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="contents">
-            <router-outlet></router-outlet>
-        </div>
-    </mat-sidenav-content>
-
-
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [fixedInViewport]="false" [fixedTopGap]="0" [fixedBottomGap]="0">
+    <div id="panel-menu">
+      <ul>
+        <li>
+          <i class="fa fa-home"></i>
+          <a routerLink="/blog">Home</a>
+        </li>
+        <li>
+          <i class="fa fa-user"></i>
+          <a routerLink="/blog/whoami">Cho, Sung Bin</a>
+        </li>
+      </ul>
+      <hr>
+      <ul>
+        <li>
+          <i class="fa fa-github"></i>
+          <a routerLink="" (click)="goToGithub()">Bin's blog</a>
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="contents">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
 
 </mat-sidenav-container>

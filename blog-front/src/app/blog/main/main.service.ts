@@ -7,6 +7,6 @@ export class MainService {
     constructor(private http: HttpClient) { }
 
     getPostsList() {
-        return this.http.get('/assets/data/postsSample.json');
+        return this.http.get('/assets/data/postsList.json');
     }
 }

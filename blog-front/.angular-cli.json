@@ -21,9 +21,14 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/prismjs/themes/prism-okaidia.css",
         "sass/styles.scss"
       ],
       "scripts": [
+        "../node_modules/marked/lib/marked.js",
+        "../node_modules/prismjs/prism.js",
+        "../node_modules/prismjs/components/prism-csharp.min.js",
+        "../node_modules/prismjs/components/prism-css.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
